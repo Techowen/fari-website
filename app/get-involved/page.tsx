@@ -125,53 +125,74 @@ export default function GetInvolvedPage() {
       </section>
 
       {/* ---------------------------- PARTNERSHIPS -------------------------- */}
-      <section className="section section--brand">
+      <section className="section section--paper">
         <div className="wrap">
           <Reveal>
             <SectionHead
-              light
-              eyebrow="Partnerships"
-              title="Who we work with"
-              lead="Our model depends on complementing what already exists in a community rather than displacing it. These are the partnerships we are actively seeking."
+              center
+              eyebrow="Strategic Partnerships"
+              title="Who we work alongside"
+              lead="Our model depends on reinforcing what already exists in a community rather than displacing it. These are the four core partnerships we actively seek."
             />
           </Reveal>
 
           <div className="grid grid-2">
             <Reveal>
-              <article className="stat" style={{ height: "100%" }}>
-                <h3 style={{ color: "#fff", fontSize: "1.2rem" }}>Community-based organisations</h3>
-                <p className="stat__note" style={{ fontSize: "0.95rem", marginTop: "0.7rem" }}>
-                  Local organisations hold relationships, trust and context an incoming organisation
-                  cannot replicate. We look for joint delivery arrangements where that expertise
-                  leads and FARI provides resourcing and technical support.
+              <article className="card" style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem" }}>
+                  <span className="card__icon" style={{ margin: 0 }}>
+                    <Icon name="community" size={24} />
+                  </span>
+                  <span className="tag">Grassroots Delivery</span>
+                </div>
+                <h3>Community-Based Organisations</h3>
+                <p className="mt-2">
+                  Local grassroots organisations hold relationships, trust, and cultural context an incoming group cannot replicate. We enter into joint delivery arrangements where community expertise leads and FARI provides technical, operational, and financial resourcing.
                 </p>
               </article>
             </Reveal>
+
             <Reveal delay={1}>
-              <article className="stat" style={{ height: "100%" }}>
-                <h3 style={{ color: "#fff", fontSize: "1.2rem" }}>Government agencies</h3>
-                <p className="stat__note" style={{ fontSize: "0.95rem", marginTop: "0.7rem" }}>
-                  Coordination with state and local government keeps our work aligned to existing
-                  plans, avoids duplication, and gives programmes a route to continue through public
-                  systems after we hand over.
+              <article className="card" style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem" }}>
+                  <span className="card__icon" style={{ margin: 0 }}>
+                    <Icon name="scales" size={24} />
+                  </span>
+                  <span className="tag">Public Systems</span>
+                </div>
+                <h3>Government Agencies</h3>
+                <p className="mt-2">
+                  Coordination with federal, state, and local government keeps our programmes aligned with official development plans, prevents duplication, and ensures public facilities have institutional pathways to continue long after handover.
                 </p>
               </article>
             </Reveal>
+
             <Reveal delay={2}>
-              <article className="stat" style={{ height: "100%" }}>
-                <h3 style={{ color: "#fff", fontSize: "1.2rem" }}>Foundations and institutional donors</h3>
-                <p className="stat__note" style={{ fontSize: "0.95rem", marginTop: "0.7rem" }}>
-                  We welcome funders who want defined outcomes, honest reporting against them, and a
-                  clear account of what did not work alongside what did.
+              <article className="card" style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem" }}>
+                  <span className="card__icon" style={{ margin: 0 }}>
+                    <Icon name="growth" size={24} />
+                  </span>
+                  <span className="tag">Institutional Giving</span>
+                </div>
+                <h3>Foundations &amp; Institutional Donors</h3>
+                <p className="mt-2">
+                  We partner with philanthropic foundations seeking measurable humanitarian impact, transparent tracking against milestones, and unvarnished reporting of challenges and programmatic lessons learned.
                 </p>
               </article>
             </Reveal>
+
             <Reveal delay={3}>
-              <article className="stat" style={{ height: "100%" }}>
-                <h3 style={{ color: "#fff", fontSize: "1.2rem" }}>Companies</h3>
-                <p className="stat__note" style={{ fontSize: "0.95rem", marginTop: "0.7rem" }}>
-                  Substantive community investment, employee skills contribution, and in-kind
-                  support that is matched to genuine need rather than to available stock.
+              <article className="card" style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem" }}>
+                  <span className="card__icon" style={{ margin: 0 }}>
+                    <Icon name="handshake" size={24} />
+                  </span>
+                  <span className="tag">Corporate CSR</span>
+                </div>
+                <h3>Private Sector &amp; Industry Partners</h3>
+                <p className="mt-2">
+                  We develop high-impact corporate social investment partnerships, connecting employee pro-bono expertise, logistics networks, and funding directly with communities facing severe socio-economic shocks.
                 </p>
               </article>
             </Reveal>
@@ -179,8 +200,8 @@ export default function GetInvolvedPage() {
 
           <Reveal delay={1}>
             <div className="center mt-5">
-              <Btn href={`mailto:${site.contact.partnerships}`} variant="light" arrow>
-                {site.contact.partnerships}
+              <Btn href={`mailto:${site.contact.partnerships}`} variant="outline" arrow>
+                Discuss a partnership ({site.contact.partnerships})
               </Btn>
             </div>
           </Reveal>

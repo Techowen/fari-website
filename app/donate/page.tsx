@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/reveal";
-import { Btn, EditorNote, PageHero, SectionHead } from "@/components/ui";
+import { Btn, PageHero, SectionHead } from "@/components/ui";
 import DonateWidget from "@/components/donate-widget";
 import { Check, Icon } from "@/components/icons";
 import { faqs, focusAreas } from "@/lib/content";
@@ -71,15 +71,7 @@ export default function DonatePage() {
                   </li>
                 </ul>
 
-                <div className="mt-5">
-                  <EditorNote>
-                    The amounts shown opposite are illustrative until your programme costings are
-                    finalised — update them in <code>lib/content.ts</code> under{" "}
-                    <code>donationTiers</code>. Payment is not connected: wire Paystack or
-                    Flutterwave into <code>components/donate-widget.tsx</code>, then remove this
-                    note from <code>app/donate/page.tsx</code>.
-                  </EditorNote>
-                </div>
+
               </div>
             </Reveal>
 

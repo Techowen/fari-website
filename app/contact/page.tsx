@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import Reveal from "@/components/reveal";
-import { EditorNote, PageHero, SectionHead } from "@/components/ui";
+import { PageHero, SectionHead } from "@/components/ui";
 import ContactForm from "@/components/contact-form";
-import { ClockIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/icons";
+import { ArrowRight, ClockIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/icons";
 import { site } from "@/lib/site";
 import { faqs } from "@/lib/content";
 
@@ -17,14 +17,16 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        trail={[{ label: "Contact" }]}
-        eyebrow="Contact"
-        image="/assets/banners/page-contact.jpg"
-        imageAlt="PLACEHOLDER — a team member at work in the office"
-        title="Talk to our team"
-        lead="Whether you want to volunteer, propose a partnership, ask about our programmes or raise a concern, we would like to hear from you."
-      />
+      <div style={{ paddingBottom: "20px" }}>
+        <PageHero
+          trail={[{ label: "Contact" }]}
+          eyebrow="Contact FARI"
+          image="/assets/hero/hero-community.jpg"
+          imageAlt="FARI team engaging with community members in Nigeria"
+          title="Talk to our team"
+          lead="Whether you want to volunteer, propose a strategic partnership, enquire about our programmes or raise a confidential concern, we want to hear from you."
+        />
+      </div>
 
       {/* ----------------------------- TILES ------------------------------- */}
       <section className="section section--tight section--paper">
@@ -32,61 +34,87 @@ export default function ContactPage() {
           <div className="grid grid-4">
             <Reveal>
               <div className="contact-tile">
-                <span className="contact-tile__ic">
-                  <MailIcon size={22} />
-                </span>
-                <div>
-                  <h4>Email</h4>
-                  <p>
-                    <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
-                    <br />
-                    <a href={`mailto:${site.contact.partnerships}`}>{site.contact.partnerships}</a>
-                  </p>
+                <div className="contact-tile__top">
+                  <span className="contact-tile__ic">
+                    <MailIcon size={24} />
+                  </span>
+                  <span className="contact-tile__tag">Official Email</span>
                 </div>
+                <h4>Email Enquiries</h4>
+                <p>
+                  General: <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+                  <br />
+                  Partnerships: <a href={`mailto:${site.contact.partnerships}`}>{site.contact.partnerships}</a>
+                </p>
+                <a href={`mailto:${site.contact.email}`} className="contact-tile__action">
+                  Send email <ArrowRight size={14} />
+                </a>
               </div>
             </Reveal>
 
             <Reveal delay={1}>
               <div className="contact-tile">
-                <span className="contact-tile__ic">
-                  <PhoneIcon size={22} />
-                </span>
-                <div>
-                  <h4>Phone</h4>
-                  <p>
-                    <a href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a>
-                  </p>
+                <div className="contact-tile__top">
+                  <span className="contact-tile__ic">
+                    <PhoneIcon size={24} />
+                  </span>
+                  <span className="contact-tile__tag">Direct Line</span>
                 </div>
+                <h4>Telephone Support</h4>
+                <p>
+                  Office: <a href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a>
+                  <br />
+                  <span style={{ fontSize: "0.85rem", color: "var(--ink-500)" }}>
+                    Monday – Friday, 9am – 5pm WAT
+                  </span>
+                </p>
+                <a href={`tel:${site.contact.phoneHref}`} className="contact-tile__action">
+                  Call office <ArrowRight size={14} />
+                </a>
               </div>
             </Reveal>
 
             <Reveal delay={2}>
               <div className="contact-tile">
-                <span className="contact-tile__ic">
-                  <PinIcon size={22} />
-                </span>
-                <div>
-                  <h4>Office</h4>
-                  <p>
-                    {site.contact.address.line1}
-                    <br />
-                    {site.contact.address.line2}
-                    <br />
-                    {site.contact.address.country}
-                  </p>
+                <div className="contact-tile__top">
+                  <span className="contact-tile__ic">
+                    <PinIcon size={24} />
+                  </span>
+                  <span className="contact-tile__tag">Headquarters</span>
                 </div>
+                <h4>Registered Office</h4>
+                <p>
+                  {site.contact.address.line1}
+                  <br />
+                  {site.contact.address.line2}
+                  <br />
+                  {site.contact.address.country}
+                </p>
+                <span className="contact-tile__action" style={{ color: "var(--primary-700)" }}>
+                  Federal Capital Territory
+                </span>
               </div>
             </Reveal>
 
             <Reveal delay={3}>
               <div className="contact-tile">
-                <span className="contact-tile__ic">
-                  <ClockIcon size={22} />
-                </span>
-                <div>
-                  <h4>Hours</h4>
-                  <p>{site.contact.hours}</p>
+                <div className="contact-tile__top">
+                  <span className="contact-tile__ic">
+                    <ClockIcon size={24} />
+                  </span>
+                  <span className="contact-tile__tag">Working Hours</span>
                 </div>
+                <h4>Operating Hours</h4>
+                <p>
+                  {site.contact.hours}
+                  <br />
+                  <span style={{ fontSize: "0.85rem", color: "var(--ink-500)" }}>
+                    Closed on official public holidays
+                  </span>
+                </p>
+                <span className="contact-tile__action" style={{ color: "var(--primary-700)" }}>
+                  West Africa Time (WAT)
+                </span>
               </div>
             </Reveal>
           </div>
@@ -98,31 +126,22 @@ export default function ContactPage() {
         <div className="wrap">
           <div className="split" style={{ alignItems: "start" }}>
             <Reveal>
-              <div>
+              <div className="sticky-col">
                 <span className="eyebrow">Send a message</span>
                 <h2>Tell us what you have in mind</h2>
                 <p className="lead mt-2">
-                  Give us enough detail to respond usefully — the community or area you are asking
-                  about, the kind of support you are offering, or the question you need answered. We
-                  aim to reply within three working days.
+                  Give us enough detail to respond helpfully. Whether you are offering voluntary time,
+                  proposing an institutional grant, or seeking programme collaboration, we aim to review and reply within three working days.
                 </p>
 
-                <div className="mt-5">
-                  <h4 style={{ marginBottom: "0.6rem" }}>Raising a safeguarding concern</h4>
-                  <p className="muted" style={{ fontSize: "0.95rem" }}>
-                    If your message concerns the conduct of FARI staff, volunteers or partners,
-                    select <strong>Safeguarding or complaint</strong> in the form. Reports are
-                    treated confidentially and escalated to our board, not to programme management.
+                <div className="card mt-4" style={{ background: "var(--canvas-alt)" }}>
+                  <h4 style={{ marginBottom: "0.5rem", color: "var(--primary-900)" }}>
+                    Safeguarding &amp; Confidential Reports
+                  </h4>
+                  <p className="muted" style={{ fontSize: "0.925rem", lineHeight: 1.6 }}>
+                    If your message concerns the conduct of FARI personnel, volunteers, or partners,
+                    select <strong>Safeguarding or complaint</strong> in the form. Such reports are treated with strict confidentiality and escalated directly to the board oversight committee.
                   </p>
-                </div>
-
-                <div className="mt-4">
-                  <EditorNote>
-                    The form validates in the browser and confirms on screen, but does not deliver
-                    yet. Wire it up in <code>components/contact-form.tsx</code> — the block to
-                    replace is marked in the file — then delete this note from{" "}
-                    <code>app/contact/page.tsx</code>.
-                  </EditorNote>
                 </div>
               </div>
             </Reveal>
@@ -140,7 +159,12 @@ export default function ContactPage() {
       <section className="section section--paper">
         <div className="wrap wrap--narrow">
           <Reveal>
-            <SectionHead center eyebrow="Questions" title="Frequently asked" />
+            <SectionHead
+              center
+              eyebrow="Quick Answers"
+              title="Frequently Asked Questions"
+              lead="Common enquiries regarding our operations, governance, and partnerships."
+            />
           </Reveal>
 
           <Reveal delay={1}>

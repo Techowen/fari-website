@@ -29,9 +29,9 @@ export default function HomePage() {
               <div style={{ position: "relative" }}>
                 <Media
                   src="/assets/home-about.jpg"
-                  alt="PLACEHOLDER — a community gathering during a programme session"
+                  alt="A community consultation meeting in Nigeria"
                   variant={1}
-                  ratio="4x3"
+                  ratio="3x4"
                 />
                 <div className="chip">
                   <span className="chip__ic">
@@ -51,43 +51,43 @@ export default function HomePage() {
                 <h2>A Nigerian organisation built around the people it serves</h2>
                 <p className="lead mt-2">
                   Future Advancement and Relief Initiative was established in {site.founded} to
-                  support vulnerable communities across Nigeria. We combine immediate relief with
-                  the longer work of education, income and resilience — because the pressures
-                  facing these communities never arrive one at a time.
+                  support vulnerable communities across Nigeria. We integrate immediate emergency relief
+                  with sustainable education, income generation, and community resilience so families can
+                  rebuild with lasting stability.
                 </p>
 
                 <ul className="ticks">
                   <li>
                     <Check size={19} />
                     <span>
-                      <strong>Community-led.</strong> Programmes are designed with community
-                      committees, not delivered to them.
+                      <strong>Community-Led.</strong> Programmes are designed directly with local committees
+                      rather than delivered from the outside.
                     </span>
                   </li>
                   <li>
                     <Check size={19} />
                     <span>
-                      <strong>Deliberately inclusive.</strong> Women, persons with disabilities and
-                      displaced people are reached by design, not by chance.
+                      <strong>Deliberately Inclusive.</strong> Women, youth, persons with disabilities, and
+                      displaced families are prioritized at every phase.
                     </span>
                   </li>
                   <li>
                     <Check size={19} />
                     <span>
-                      <strong>Built through partnership.</strong> We work with government, local
-                      organisations and communities rather than around them.
+                      <strong>Built Through Partnership.</strong> We coordinate closely with grassroots organisations,
+                      community groups, and local authorities.
                     </span>
                   </li>
                   <li>
                     <Check size={19} />
                     <span>
-                      <strong>Designed to continue.</strong> Every programme has an exit, and the
-                      capability stays behind.
+                      <strong>Designed for Self-Sufficiency.</strong> Every programme includes an exit plan
+                      that leaves long-term local capacity in place.
                     </span>
                   </li>
                 </ul>
 
-                <div className="mt-5">
+                <div className="mt-4" style={{ display: "flex", justifyContent: "flex-end" }}>
                   <Btn href="/about" variant="outline" arrow>
                     More about FARI
                   </Btn>
@@ -127,10 +127,10 @@ export default function HomePage() {
             ))}
 
             <Reveal delay={2}>
-              <div className="card" style={{ background: "var(--brand-800)", borderColor: "transparent" }}>
+              <div className="card" style={{ background: "var(--primary-700)", borderColor: "transparent" }}>
                 <h3 style={{ color: "#fff" }}>Not sure where to start?</h3>
-                <p style={{ color: "rgba(255,255,255,.75)" }}>
-                  Our overview page sets out how the five areas fit together and who each one is
+                <p style={{ color: "rgba(255,255,255,.85)", marginTop: "0.5rem" }}>
+                  Our overview page sets out how the five areas fit together, our practical methodology, and who each one is
                   designed to reach.
                 </p>
                 <div className="mt-3">
@@ -149,9 +149,10 @@ export default function HomePage() {
         <div className="wrap">
           <Reveal>
             <SectionHead
+              center
               eyebrow="Who we serve"
               title="Priority is given to those most often missed"
-              lead="Programmes that do not deliberately seek out the most excluded tend not to reach them. These five groups are built into how we target, design and measure our work."
+              lead="Programmes that do not deliberately seek out the most excluded tend not to reach them. These target groups are built into how we design, resource, and measure our work."
             />
           </Reveal>
 
@@ -165,25 +166,35 @@ export default function HomePage() {
                 </article>
               </Reveal>
             ))}
+
+            <Reveal delay={2}>
+              <article className="panel panel--brand">
+                <span className="panel__no" style={{ color: "var(--accent-400)" }}>06</span>
+                <h3>Accountable Inclusion</h3>
+                <p className="mt-2">
+                  Our delivery frameworks monitor participation across each vulnerable demographic to guarantee that those furthest behind are reached first.
+                </p>
+              </article>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* --------------------------- COMMITMENTS --------------------------- */}
-      <section className="section section--brand">
+      <section className="section section--primary">
         <div className="wrap">
-          <div className="split">
+          <div className="split" style={{ alignItems: "start" }}>
             <Reveal>
-              <div>
+              <div className="sticky-col">
                 <span className="eyebrow eyebrow--light">Where we stand</span>
                 <h2>A new organisation, held to an old standard</h2>
                 <p className="lead mt-2">
-                  FARI was established in {site.founded}, so we do not yet have years of results to
-                  point to. What we can commit to now is how we work: openly, inclusively, and
+                  FARI was established in {site.founded}, so we do not yet have years of historical figures to
+                  point to. What we commit to now is how we work: openly, inclusively, and
                   accountable to communities first. Our first impact report will be published at
-                  the close of our first programme cycle.
+                  the close of our inaugural programme cycle.
                 </p>
-                <div className="mt-5">
+                <div className="mt-4">
                   <Btn href="/about" variant="light" arrow>
                     How we work
                   </Btn>
@@ -192,7 +203,7 @@ export default function HomePage() {
             </Reveal>
 
             <Reveal delay={1}>
-              <div className="grid grid-2" style={{ gap: "1rem" }}>
+              <div className="grid grid-2" style={{ gap: "1.25rem" }}>
                 {commitments.map((item) => (
                   <div className="stat" key={item.label}>
                     <div className="stat__num">{item.figure}</div>
@@ -210,24 +221,12 @@ export default function HomePage() {
       <section className="section">
         <div className="wrap">
           <Reveal>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "1.5rem",
-                alignItems: "flex-end",
-                justifyContent: "space-between",
-                marginBottom: "clamp(2rem,4vw,3rem)",
-              }}
-            >
-              <div style={{ maxWidth: 620 }}>
-                <span className="eyebrow">Latest</span>
-                <h2>News and updates</h2>
-              </div>
-              <Btn href="/news" variant="outline" small arrow>
-                All news
-              </Btn>
-            </div>
+            <SectionHead
+              center
+              eyebrow="News & Dispatches"
+              title="Latest from the Field"
+              lead="Stories, research, and programme milestones from our ongoing community initiatives."
+            />
           </Reveal>
 
           <div className="grid grid-3">
@@ -242,10 +241,19 @@ export default function HomePage() {
                     </div>
                     <h3>{post.title}</h3>
                     <p>{post.excerpt}</p>
+                    <span className="post-card__read">
+                      Read story <ArrowRight size={15} />
+                    </span>
                   </div>
                 </Link>
               </Reveal>
             ))}
+          </div>
+
+          <div className="mt-5 center">
+            <Btn href="/news" variant="outline" arrow>
+              View all news & updates
+            </Btn>
           </div>
         </div>
       </section>

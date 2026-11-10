@@ -1,15 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import BackToTop from "@/components/back-to-top";
 import { site } from "@/lib/site";
 
-const manrope = Manrope({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-manrope",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-heading",
+  weight: ["500", "600", "700", "800"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -52,10 +60,17 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   alternates: { canonical: "/" },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon", type: "image/png" },
+    ],
+    apple: "/icon.svg",
+  },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1e1148",
+  themeColor: "#0B3B2C",
   width: "device-width",
   initialScale: 1,
 };
@@ -88,7 +103,7 @@ const orgJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-NG" className={manrope.variable}>
+    <html lang="en-NG" className={`${plusJakartaSans.variable} ${inter.variable}`}>
       <body>
         {/* Without JS the reveal animation must not leave content invisible. */}
         <noscript>
@@ -102,6 +117,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
+        <BackToTop />
 
         <script
           type="application/ld+json"

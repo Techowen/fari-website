@@ -1,12 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Reveal from "@/components/reveal";
-import { EditorNote, Media, PageHero } from "@/components/ui";
+import { Media, PageHero } from "@/components/ui";
+import { ArrowRight } from "@/components/icons";
 import { formatDate, posts } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "News",
-  description: "Announcements, updates and reflections from the FARI team.",
+  title: "News & Dispatches",
+  description: "Announcements, updates and field reflections from the FARI team.",
   alternates: { canonical: "/news" },
 };
 
@@ -17,11 +18,11 @@ export default function NewsPage() {
     <>
       <PageHero
         trail={[{ label: "News" }]}
-        eyebrow="Newsroom"
+        eyebrow="Newsroom &amp; Field Reports"
         image="/assets/banners/page-news.jpg"
-        imageAlt="PLACEHOLDER — participants at a training session"
+        imageAlt="Workshop and community training session in Nigeria"
         title="News and updates"
-        lead="Announcements, programme updates and reflections on how we work. We publish what we are learning, including where our approach needs to change."
+        lead="Announcements, programme updates and field reflections on our community-led initiatives across Nigeria."
       />
 
       <section className="section section--paper">
@@ -32,7 +33,7 @@ export default function NewsPage() {
               <Link
                 href={`/news/${lead.slug}`}
                 className="post-card"
-                style={{ marginBottom: "clamp(2rem,4vw,3rem)" }}
+                style={{ marginBottom: "clamp(2rem,4vw,3.5rem)" }}
               >
                 <div className="split" style={{ gap: 0, alignItems: "stretch" }}>
                   <Media src={lead.image} alt="" variant={lead.gradient} ratio="16x9" />
@@ -41,8 +42,11 @@ export default function NewsPage() {
                       <span className="tag tag--accent">{lead.category}</span>
                       <time dateTime={lead.date}>{formatDate(lead.date)}</time>
                     </div>
-                    <h2 style={{ fontSize: "clamp(1.45rem,2.6vw,2rem)" }}>{lead.title}</h2>
-                    <p className="mt-2">{lead.excerpt}</p>
+                    <h2 style={{ fontSize: "clamp(1.45rem,2.5vw,2rem)" }}>{lead.title}</h2>
+                    <p className="mt-2" style={{ WebkitLineClamp: 4 }}>{lead.excerpt}</p>
+                    <span className="post-card__read" style={{ marginTop: "1.25rem" }}>
+                      Read featured story <ArrowRight size={16} />
+                    </span>
                   </div>
                 </div>
               </Link>
@@ -62,22 +66,14 @@ export default function NewsPage() {
                     </div>
                     <h3>{post.title}</h3>
                     <p>{post.excerpt}</p>
+                    <span className="post-card__read">
+                      Read full story <ArrowRight size={15} />
+                    </span>
                   </div>
                 </Link>
               </Reveal>
             ))}
           </div>
-
-          <Reveal delay={1}>
-            <div className="mt-5">
-              <EditorNote>
-                These posts are starter content written from FARI&rsquo;s founding brief. Add,
-                replace or remove entries in <code>lib/content.ts</code> under <code>posts</code> —
-                each one automatically gets its own page, appears on the home page, and is added to
-                the sitemap. Delete this note from <code>app/news/page.tsx</code> when you publish.
-              </EditorNote>
-            </div>
-          </Reveal>
         </div>
       </section>
     </>

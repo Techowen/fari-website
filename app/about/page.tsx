@@ -18,8 +18,8 @@ export default function AboutPage() {
       <PageHero
         trail={[{ label: "About Us" }]}
         eyebrow="About FARI"
-        image="/assets/banners/page-about.jpg"
-        imageAlt="PLACEHOLDER — community members at a consultation meeting"
+        image="/assets/hero/hero-community.jpg"
+        imageAlt="Community members and children gathered together in Nigeria"
         title="Working with communities, not on their behalf"
         lead={`${site.name} is a Nigerian not-for-profit organisation established in ${site.founded} to support vulnerable communities through community-led programmes and strategic partnerships.`}
       />
@@ -224,57 +224,97 @@ export default function AboutPage() {
 
       {/* --------------------------- GOVERNANCE ----------------------------- */}
       <section className="section section--paper">
-        <div className="wrap wrap--narrow">
+        <div className="wrap">
           <Reveal>
             <SectionHead
               center
-              eyebrow="Governance"
-              title="Accountability and safeguarding"
-              lead="How we are governed, and what communities and partners are entitled to expect from us."
+              eyebrow="Institutional Governance"
+              title="Accountability, Oversight and Safeguarding"
+              lead="How we are governed, and what communities, partners, and institutional donors are entitled to expect from us."
             />
           </Reveal>
 
-          <Reveal delay={1}>
-            <div className="grid grid-2">
-              <article className="card">
-                <h3>Oversight</h3>
+          <div className="grid grid-2">
+            <Reveal>
+              <article className="card" style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem" }}>
+                  <span className="card__icon" style={{ margin: 0 }}>
+                    <Icon name="scales" size={24} />
+                  </span>
+                  <span className="tag">Strategic Oversight</span>
+                </div>
+                <h3>Independent Board Oversight</h3>
                 <p className="mt-2">
-                  FARI is governed by a board responsible for strategy, financial oversight and
-                  organisational conduct. Programme decisions are made by the management team
-                  within a framework the board approves and reviews.
+                  FARI is governed by an independent governing board responsible for strategic direction, statutory compliance,
+                  and organizational conduct. Programme decisions are made by executive leadership within strict fiduciary frameworks approved and audited by the board.
                 </p>
+                <div style={{ marginTop: "auto", paddingTop: "1.25rem", borderTop: "1px solid var(--line-soft)", fontSize: "0.85rem", color: "var(--ink-500)" }}>
+                  Standard: Quarterly governance review &amp; conflict-of-interest registers
+                </div>
               </article>
-              <article className="card">
-                <h3>Financial transparency</h3>
+            </Reveal>
+
+            <Reveal delay={1}>
+              <article className="card" style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem" }}>
+                  <span className="card__icon" style={{ margin: 0 }}>
+                    <Icon name="growth" size={24} />
+                  </span>
+                  <span className="tag">Financial Integrity</span>
+                </div>
+                <h3>Financial Transparency &amp; Open Books</h3>
                 <p className="mt-2">
-                  We publish how funds are allocated between programme delivery and the operational
-                  systems that responsible delivery requires. Accounts are prepared annually and
-                  available to partners and donors.
+                  We publish how funds are allocated between direct community delivery and the operational and safeguarding systems that responsible delivery requires.
+                  Accounts are independently audited annually and made accessible to partners and donors.
                 </p>
+                <div style={{ marginTop: "auto", paddingTop: "1.25rem", borderTop: "1px solid var(--line-soft)", fontSize: "0.85rem", color: "var(--ink-500)" }}>
+                  Standard: Published annual financial statements &amp; external audit
+                </div>
               </article>
-              <article className="card">
-                <h3>Safeguarding</h3>
+            </Reveal>
+
+            <Reveal delay={2}>
+              <article className="card" style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem" }}>
+                  <span className="card__icon" style={{ margin: 0 }}>
+                    <Icon name="shield" size={24} />
+                  </span>
+                  <span className="tag">Protection Protocol</span>
+                </div>
+                <h3>Zero-Tolerance Safeguarding</h3>
                 <p className="mt-2">
-                  Clear conduct standards apply to all staff, volunteers and partners. Anyone who
-                  works with FARI is bound by them, and breaches are treated as a matter for the
-                  board rather than for programme management alone.
+                  Clear conduct and protection standards apply to all staff, volunteers, and sub-contractors. We enforce strict prevention of sexual exploitation, abuse, and harassment (PSEAH). Any breach is escalated directly to the board oversight committee.
                 </p>
+                <div style={{ marginTop: "auto", paddingTop: "1.25rem", borderTop: "1px solid var(--line-soft)", fontSize: "0.85rem", color: "var(--ink-500)" }}>
+                  Standard: Mandatory staff background vetting &amp; child protection charter
+                </div>
               </article>
-              <article className="card">
-                <h3>Complaints and feedback</h3>
+            </Reveal>
+
+            <Reveal delay={3}>
+              <article className="card" style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem" }}>
+                  <span className="card__icon" style={{ margin: 0 }}>
+                    <Icon name="community" size={24} />
+                  </span>
+                  <span className="tag">Feedback Loop</span>
+                </div>
+                <h3>Community Accountability &amp; Reporting</h3>
                 <p className="mt-2">
-                  Communities we work with have an accessible route to raise concerns about our
-                  conduct or our programmes, confidentially and without consequence. Accountability
-                  runs to them first.
+                  Communities we serve have confidential, accessible grievance mechanisms to report concerns or offer feedback without fear of reprisal.
+                  We prioritize accountability to local residents first and foremost.
                 </p>
+                <div style={{ marginTop: "auto", paddingTop: "1.25rem", borderTop: "1px solid var(--line-soft)", fontSize: "0.85rem", color: "var(--ink-500)" }}>
+                  Standard: Direct confidential whistleblowing channel to Board Audit Committee
+                </div>
               </article>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
           <Reveal delay={2}>
             <div className="center mt-5">
-              <Btn href="/contact" variant="outline" arrow>
-                Request our governance documents
+              <Btn href="/contact?enquiry=governance" variant="outline" arrow>
+                Request our governance &amp; statutory documents
               </Btn>
             </div>
           </Reveal>

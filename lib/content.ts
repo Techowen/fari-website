@@ -111,7 +111,8 @@ export const focusAreas: FocusArea[] = [
     banner: "/assets/hero/hero-education.jpg",
     image: "/assets/education.jpg",
     title: "Education",
-    short: "Keeping children learning, and bringing those out of school back in.",
+    short:
+      "Keeping children learning and bringing those out of school back into classrooms. We provide direct enrollment support, learning supplies, and accessible learning spaces across vulnerable communities.",
     summary:
       "Access to quality learning for children and young people whose schooling has been interrupted by poverty, displacement, disability or exclusion.",
     icon: "book",
@@ -147,7 +148,8 @@ export const focusAreas: FocusArea[] = [
     banner: "/assets/hero/hero-community.jpg",
     image: "/assets/humanitarian-response.jpg",
     title: "Humanitarian Response",
-    short: "Meeting urgent needs when crisis displaces families.",
+    short:
+      "Delivering timely, dignified assistance when crisis or seasonal displacement uproots families. We supply essential relief kits, clean water, and nutritional support while setting up long-term community recovery.",
     summary:
       "Timely, dignified assistance for households affected by displacement, flooding and other emergencies — delivered with communities, not to them.",
     icon: "relief",
@@ -183,7 +185,8 @@ export const focusAreas: FocusArea[] = [
     banner: "/assets/hero/hero-climate.jpg",
     image: "/assets/climate-resilience.jpg",
     title: "Climate Resilience",
-    short: "Helping communities adapt to a climate that is already changing.",
+    short:
+      "Helping vulnerable communities adapt to climate pressures, irregular rainfall, and soil degradation. We equip smallholders with drought-resilient practices, tree planting, and community early-warning systems.",
     summary:
       "Practical adaptation, environmental restoration and early-warning capacity for communities exposed to flooding, drought and degraded land.",
     icon: "climate",
@@ -219,7 +222,8 @@ export const focusAreas: FocusArea[] = [
     banner: "/assets/hero/hero-livelihoods.jpg",
     image: "/assets/livelihoods.jpg",
     title: "Livelihoods",
-    short: "Income that lasts longer than the programme that started it.",
+    short:
+      "Building sustainable household income that outlasts initial donor funding. We combine market-relevant vocational training with start-up seed capital, business mentoring, and community savings groups.",
     summary:
       "Skills, start-up support and market access that move households from dependence on aid to durable, self-sustaining income.",
     icon: "livelihood",
@@ -255,7 +259,8 @@ export const focusAreas: FocusArea[] = [
     banner: "/assets/banners/page-what-we-do.jpg",
     image: "/assets/protection.jpg",
     title: "Protection",
-    short: "Safety, dignity and rights for people most at risk of harm.",
+    short:
+      "Safeguarding children, women, displaced families, and persons with disabilities from exploitation and neglect. We provide community-based psychosocial care, legal referral pathways, and safe community spaces.",
     summary:
       "Preventing and responding to violence, exploitation and exclusion — with safe referral, community awareness and inclusion of those routinely left out.",
     icon: "shield",

@@ -4,7 +4,7 @@ import type { IconName } from "@/lib/content";
 const base = {
   fill: "none",
   stroke: "currentColor",
-  strokeWidth: 1.7,
+  strokeWidth: 1.8,
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
   viewBox: "0 0 24 24",
@@ -13,58 +13,64 @@ const base = {
 type P = SVGProps<SVGSVGElement> & { size?: number };
 
 const svg =
-  (paths: React.ReactNode, strokeWidth = 1.7) =>
+  (paths: React.ReactNode, strokeWidth = 1.8) =>
   ({ size = 24, ...rest }: P) => (
     <svg {...base} strokeWidth={strokeWidth} width={size} height={size} aria-hidden="true" {...rest}>
       {paths}
     </svg>
   );
 
-/* ---- Focus-area and value icons ---- */
+/* ---- Focus-area and value icons (Professional & Detailed) ---- */
 
 export const BookIcon = svg(
   <>
+    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+    <path d="M6 6h10" />
+    <path d="M6 10h10" />
+    <path d="M6 14h6" />
     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-    <path d="M9 7h7M9 11h5" />
   </>,
 );
 
 export const ReliefIcon = svg(
   <>
-    <path d="M3 9.5 12 3l9 6.5" />
-    <path d="M5 21V11h14v10z" />
-    <path d="M12 13.5v4M10 15.5h4" />
+    <path d="M3 10.5 12 3l9 7.5" />
+    <path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10" />
+    <path d="M12 12v6" />
+    <path d="M9 15h6" />
   </>,
 );
 
 export const ClimateIcon = svg(
   <>
-    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z" />
+    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z" />
     <path d="M2 21c0-3 1.9-5.4 5.1-6" />
+    <path d="M12 12c-2 1-3 3-3 5" />
   </>,
 );
 
 export const LivelihoodIcon = svg(
   <>
-    <rect x="2" y="7" width="20" height="14" rx="2.5" />
-    <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-    <path d="M2 12h20M12 12v3" />
+    <rect width="20" height="14" x="2" y="7" rx="2" />
+    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+    <circle cx="12" cy="13" r="1.5" />
+    <path d="M12 14.5V17" />
   </>,
 );
 
 export const ShieldIcon = svg(
   <>
-    <path d="M12 2 4 5.5v6c0 5 3.4 9.4 8 10.5 4.6-1.1 8-5.5 8-10.5v-6z" />
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
     <path d="m9 12 2 2 4-4" />
   </>,
 );
 
 export const CommunityIcon = svg(
   <>
-    <path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-    <circle cx="9.5" cy="7" r="4" />
-    <path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8" />
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
   </>,
 );
 
@@ -79,25 +85,27 @@ export const HandshakeIcon = svg(
 
 export const CompassIcon = svg(
   <>
-    <circle cx="12" cy="12" r="9.5" />
-    <path d="m15.5 8.5-2 5-5 2 2-5z" />
+    <circle cx="12" cy="12" r="10" />
+    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
   </>,
 );
 
 export const ScalesIcon = svg(
   <>
-    <path d="M12 3v18M7 21h10" />
-    <path d="M5 7h14M8.5 6.5 5 13h7z" />
-    <path d="M15.5 6.5 12 13h7z" />
+    <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+    <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+    <path d="M7 21h10" />
+    <path d="M12 3v18" />
+    <path d="M3 7h18" />
   </>,
 );
 
 export const GrowthIcon = svg(
   <>
-    <path d="M3 21h18" />
-    <path d="M12 21V9" />
-    <path d="M12 9c0-3 2-5.5 6-6 0 4-2.5 6-6 6z" />
-    <path d="M12 13c0-2.5-1.8-4.5-5-5 0 3.4 2 5 5 5z" />
+    <path d="M12 20v-8" />
+    <path d="M4 4v16h16" />
+    <path d="m4 15 6-6 4 4 6-6" />
+    <path d="M16 7h4v4" />
   </>,
 );
 
@@ -105,42 +113,42 @@ export const GrowthIcon = svg(
 
 export const ArrowRight = svg(
   <>
-    <path d="M5 12h14M13 6l6 6-6 6" />
+    <path d="M5 12h14M12 5l7 7-7 7" />
   </>,
-  2.2,
+  2,
 );
 
 export const Check = svg(
   <>
-    <path d="M20 6 9 17l-5-5" />
+    <polyline points="20 6 9 17 4 12" />
   </>,
-  2.6,
+  2.4,
 );
 
 export const MailIcon = svg(
   <>
-    <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" />
-    <path d="m3 7 9 6 9-6" />
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
   </>,
 );
 
 export const PhoneIcon = svg(
   <>
-    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
   </>,
 );
 
 export const PinIcon = svg(
   <>
-    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
     <circle cx="12" cy="10" r="3" />
   </>,
 );
 
 export const ClockIcon = svg(
   <>
-    <circle cx="12" cy="12" r="9.5" />
-    <path d="M12 6.5V12l3.5 2" />
+    <circle cx="12" cy="12" r="10" />
+    <polyline points="12 6 12 12 16 14" />
   </>,
 );
 
@@ -211,17 +219,20 @@ export function SocialIcon({ name, ...rest }: P & { name: string }) {
 
 export function BrandMark({ size = 24 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
-      {/* Rising arc over a sheltering base — advancement and relief */}
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      {/* Sheltering relief base */}
+      <rect x="6" y="24" width="20" height="3" rx="1.5" fill="#fff" fillOpacity="0.85" />
+      {/* Rising advancement arc */}
       <path
-        d="M7 21c0-6.2 4.2-11 9-11 3.1 0 5.8 1.6 7.4 4.2"
-        fill="none"
+        d="M7 21C7 14.8 11.2 10 16 10C19.1 10 21.8 11.6 23.4 14.2"
         stroke="#fff"
         strokeWidth="2.6"
         strokeLinecap="round"
       />
-      <path d="M20.5 9.5 25 13.5l-5.6 1.6z" fill="#fff" />
-      <rect x="7" y="24" width="18" height="3.2" rx="1.6" fill="rgba(255,255,255,.72)" />
+      {/* Forward direction arrow / crest */}
+      <path d="M20.5 9.5L25.5 13.5L20 15.2Z" fill="#fff" />
+      {/* Warm terracotta accent dot */}
+      <circle cx="16" cy="16" r="2.2" fill="#D95D22" />
     </svg>
   );
 }
